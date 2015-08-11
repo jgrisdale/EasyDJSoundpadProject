@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+
+    android:background="#000000"
+    tools:context=".EditActivity" >
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="doEndAction"
+        style="@style/btnStyleBeige"
+        android:text="Cancel" />
+
+    <Button
+        android:id="@+id/save"
+        style="@style/btnStyleBeige"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cancel"
+        android:layout_alignLeft="@+id/cancel"
+        android:layout_alignRight="@+id/cancel"
+        android:onClick="save"
+        android:text="Save Changes" />
+
+    <EditText
+        android:id="@+id/recordName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/timeBar"
+        android:layout_toRightOf="@+id/recordNameLbl"
+        android:ems="10"
+        android:textColor="#FFFFFF">
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/startTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/timeBar"
+        android:layout_below="@+id/timeBar"
+        android:textColor="#FFFFFF"
+        android:text="00:00:00" />
+
+    <SeekBar
+        android:id="@+id/timeBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/endTime"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/endTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/startTime"
+        android:layout_alignBottom="@+id/startTime"
+        android:layout_alignRight="@+id/save"
+        android:text="00:00:00"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/recordNameLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/recordName"
+        android:layout_alignBottom="@+id/recordName"
+        android:layout_alignParentLeft="true"
+        android:text="Record Name:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/currentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/startTime"
+        android:layout_alignBottom="@+id/startTime"
+        android:layout_centerHorizontal="true"
+        android:text="00:00:00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFFFFF"/>
+
+    <ListView
+        android:id="@+id/recordValuesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeBar"
+        android:layout_alignLeft="@+id/recordNameLbl"
+        android:layout_alignRight="@+id/recordName"
+        android:layout_below="@+id/recordName"
+        android:background="#FFFFFF">
+
+    </ListView>
+
+    <SeekBar
+        android:id="@+id/rateBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/soundSpinner"
+        android:layout_alignRight="@+id/currentTime"
+        android:layout_below="@+id/rateLbl"
+        android:max="150"
+        android:progress="50"
+        />
+
+    <Spinner
+        android:id="@+id/soundSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/save"
+        android:layout_below="@+id/rateBar"
+        android:layout_toRightOf="@+id/startTime"
+        android:background="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/soundLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/soundSpinner"
+        android:layout_toLeftOf="@+id/soundSpinner"
+        android:text="Value:"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/rateLbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/currentTime"
+        android:layout_toLeftOf="@+id/rateBar"
+        android:text="Rate:"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/rateVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rateBar"
+        android:layout_toRightOf="@+id/rateBar"
+        android:text="(1.00)"
+        android:textColor="#FFFFFF"/>
+
+</RelativeLayout>
